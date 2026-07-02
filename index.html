@@ -1209,6 +1209,63 @@
   .counter { display: inline-block; }
   .counter.popped { animation: numberPop 0.55s cubic-bezier(0.34,1.56,0.64,1); }
 
+  /* ── Live Demo section ── */
+  #demo {
+    padding: 96px 48px;
+    background: linear-gradient(160deg, #030e1f 0%, #051428 60%, #030e1f 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #demo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 55% at 50% 40%, rgba(1,118,211,0.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .demo-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue-light); margin-bottom: 24px;
+  }
+  .demo-eyebrow::before, .demo-eyebrow::after {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--blue-light); opacity: 0.5;
+  }
+  .demo-title {
+    font-size: clamp(38px, 6vw, 64px); font-weight: 800; line-height: 1.1;
+    letter-spacing: -1.5px; color: var(--text); margin-bottom: 16px;
+  }
+  .demo-title span { color: var(--blue-light); }
+  .demo-subtitle {
+    font-size: 17px; color: var(--text-secondary); max-width: 540px;
+    margin: 0 auto 56px; line-height: 1.6;
+  }
+  .demo-presenters {
+    display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+  }
+  .demo-presenter {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    background: rgba(1,118,211,0.07); border: 1px solid rgba(1,118,211,0.2);
+    border-radius: 20px; padding: 32px 40px; width: 240px;
+    transition: border-color 0.3s, transform 0.3s, background 0.3s;
+  }
+  .demo-presenter:hover { border-color: rgba(1,118,211,0.5); background: rgba(1,118,211,0.12); transform: translateY(-4px); }
+  .demo-presenter img {
+    width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: top center;
+    border: 3px solid rgba(1,118,211,0.4);
+  }
+  .demo-presenter-name { font-size: 16px; font-weight: 700; color: var(--text); }
+  .demo-presenter-role { font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-top: -8px; }
+  .demo-presenter-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--blue-light); background: rgba(1,118,211,0.12);
+    border: 1px solid rgba(1,118,211,0.25); border-radius: 20px; padding: 4px 14px;
+  }
+  @keyframes demoPop { from { opacity:0; transform:translateY(32px) scale(0.94); } to { opacity:1; transform:translateY(0) scale(1); } }
+  .demo-presenter.demo-animate { animation: demoPop 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+  @media (max-width:600px) { #demo { padding: 64px 24px; } .demo-presenter { width: 100%; } }
+
   /* ── Team section ── */
   #team { padding: 96px 48px; background: #060b14; }
   .team-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 48px; }
@@ -1302,6 +1359,7 @@
     <li><a href="#scenarios">Scenarios</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#roi">ROI</a></li>
+    <li><a href="#demo">Live Demo</a></li>
     <li><a href="#next">Next Steps</a></li>
     <li><a href="#team">Your Team</a></li>
   </ul>
@@ -1633,6 +1691,27 @@
           <div class="proof-stat-label">Typical time to first meaningful campaign results</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SECTION 5b — LIVE DEMO ─────────── -->
+<section id="demo">
+  <div class="demo-eyebrow">What It Feels Like</div>
+  <h2 class="demo-title">Now Let's See It <span>Live</span></h2>
+  <p class="demo-subtitle">Words and slides only go so far. The next few minutes will show you exactly what Cirkel Group's customers and teams would experience from day one.</p>
+  <div class="demo-presenters">
+    <div class="demo-presenter">
+      <img src="team/angela.jpg" alt="Angela Hurtado">
+      <div class="demo-presenter-tag">Marketing Demo</div>
+      <div class="demo-presenter-name">Angela Hurtado</div>
+      <div class="demo-presenter-role">Marketing Account Executive</div>
+    </div>
+    <div class="demo-presenter">
+      <img src="team/santiago-c.jpg" alt="Santiago Castelli">
+      <div class="demo-presenter-tag">Agentforce Demo</div>
+      <div class="demo-presenter-name">Santiago Castelli</div>
+      <div class="demo-presenter-role">AI Account Executive</div>
     </div>
   </div>
 </section>
@@ -2101,6 +2180,20 @@
 
   // ── Architecture layer cascade ──
   // Handled via CSS on .arch-layers.visible — already observed by main reveal observer
+
+  // ── Demo presenter cascade ──
+  const demoPresenters = document.querySelector('.demo-presenters');
+  if (demoPresenters) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.demo-presenter').forEach((card, i) => {
+            setTimeout(() => card.classList.add('demo-animate'), i * 160);
+          });
+        }
+      });
+    }, { threshold: 0.3 }).observe(demoPresenters);
+  }
 
   // ── Team card cascade ──
   const teamGrid = document.querySelector('.team-grid');
