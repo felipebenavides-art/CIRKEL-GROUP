@@ -1248,6 +1248,11 @@
     .reveal { opacity: 1; transform: none; }
   }
 </style>
+<script>
+  if (localStorage.getItem('cg_auth') === '1') {
+    document.write('<style>#gate{display:none!important}</style>');
+  }
+</script>
 </head>
 <body>
 
@@ -1922,7 +1927,7 @@
 <section id="team">
   <div class="section-label">The People Behind the Plan</div>
   <h2 class="section-title">Your Salesforce Team</h2>
-  <p class="section-desc">Dedicated specialists across sales, AI, marketing, and technical consulting — accountable for your outcomes at every stage.</p>
+  <p class="section-desc">Dedicated specialists across sales, AI, marketing, and technical consulting.</p>
   <div class="team-grid">
 
     <div class="team-card">
