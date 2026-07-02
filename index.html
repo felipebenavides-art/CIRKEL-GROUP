@@ -1988,7 +1988,7 @@
 <script>
   // ── Password gate ──
   (function() {
-    if (sessionStorage.getItem('cg_auth') === '1') {
+    if (localStorage.getItem('cg_auth') === '1') {
       document.getElementById('gate').classList.add('hidden');
     }
   })();
@@ -1997,7 +1997,7 @@
     const val = document.getElementById('gate-input').value;
     const err = document.getElementById('gate-error');
     if (val === 'CIRKEL2026') {
-      sessionStorage.setItem('cg_auth', '1');
+      localStorage.setItem('cg_auth', '1');
       document.getElementById('gate').classList.add('hidden');
       err.classList.remove('visible');
     } else {
