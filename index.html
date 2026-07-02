@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirkel Group × Salesforce — Strategic Briefing 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #03060F;
+    --bg-card: #07101F;
+    --bg-card-2: #0A1628;
+    --bg-section-alt: #050B18;
+    --blue: #0176D3;
+    --blue-light: #1B96FF;
+    --blue-pale: #E8F4FF;
+    --blue-dark: #032D60;
+    --blue-mid: #0B4DA6;
+    --gold: #FFB75E;
+    --green: #2ECC71;
+    --red: #E4002B;
+    --text: #FFFFFF;
+    --text-secondary: #8CA0BC;
+    --text-muted: #4A5D73;
+    --border: rgba(1,118,211,0.18);
+    --border-hover: rgba(27,150,255,0.45);
+    --glow: rgba(1,118,211,0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── Navigation ── */
+  #main-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(3,6,15,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-light);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--text); background: rgba(1,118,211,0.15); }
+
+  /* ── Hero ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(1,118,211,0.15) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(1,118,211,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(1,118,211,0.04) 60px);
+    pointer-events: none;
+  }
+
+  #hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title .accent { color: var(--blue-light); }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-meta-item span { color: var(--text-secondary); }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(1,118,211,0.12);
+    border: 1px solid rgba(1,118,211,0.3);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue-light);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--blue-light);
+    border-radius: 50%;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 1;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-cue::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--text-muted), transparent);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── Sections ── */
+  section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section.full-bleed {
+    max-width: 100%;
+    padding: 100px 0;
+  }
+
+  section.full-bleed .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .alt-bg {
+    background: var(--bg-section-alt);
+    max-width: 100%;
+    padding: 100px 0;
+  }
+
+  .alt-bg .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 64px;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+
+  .card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 32px var(--glow), var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .card-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── Grid Layouts ── */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+  @media (max-width: 900px) {
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    section { padding: 60px 20px; }
+    #main-nav { padding: 0 20px; }
+    .nav-links { display: none; }
+  }
+
+  /* ── Tags / Chips ── */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .tag-blue { background: rgba(1,118,211,0.2); color: var(--blue-light); border: 1px solid rgba(1,118,211,0.3); }
+  .tag-green { background: rgba(46,204,113,0.15); color: #2ECC71; border: 1px solid rgba(46,204,113,0.3); }
+  .tag-gold { background: rgba(255,183,94,0.15); color: var(--gold); border: 1px solid rgba(255,183,94,0.3); }
+  .tag-red { background: rgba(228,0,43,0.15); color: #FF6B81; border: 1px solid rgba(228,0,43,0.3); }
+
+  /* ── Stat blocks ── */
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .stat-number {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--blue-light);
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* ── Separator ── */
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--blue);
+    border-radius: 2px;
+    margin: 24px 0;
+  }
+
+  /* ── "We Listened" Section ── */
+  .listening-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .listening-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .listening-card:hover::before { opacity: 1; }
+  .listening-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 32px var(--glow);
+  }
+
+  .listening-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+
+  /* ── Current State ── */
+  .stack-diagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .stack-column {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+
+  .stack-column-header {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stack-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .stack-item:last-child { border-bottom: none; }
+
+  .stack-item-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .icon-bg-blue { background: rgba(1,118,211,0.2); }
+  .icon-bg-red { background: rgba(228,0,43,0.15); }
+  .icon-bg-muted { background: rgba(255,255,255,0.06); }
+
+  .stack-item-text { font-size: 14px; }
+  .stack-item-title { font-weight: 600; margin-bottom: 2px; }
+  .stack-item-desc { color: var(--text-secondary); font-size: 13px; }
+
+  /* ── Gap Table ── */
+  .gap-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .gap-table th {
+    padding: 16px 24px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--bg-card-2);
+  }
+
+  .gap-table th:first-child { color: var(--text-muted); border-right: 1px solid var(--border); }
+  .gap-table th:nth-child(2) { color: var(--red); border-right: 1px solid var(--border); width: 38%; }
+  .gap-table th:last-child { color: var(--blue-light); width: 38%; }
+
+  .gap-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    vertical-align: top;
+    border-top: 1px solid var(--border);
+  }
+
+  .gap-table td:first-child {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .gap-table td:nth-child(2) {
+    color: var(--text-secondary);
+    border-right: 1px solid var(--border);
+    background: rgba(228,0,43,0.04);
+  }
+
+  .gap-table td:last-child {
+    background: rgba(1,118,211,0.05);
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .gap-table tr:last-child td { border-bottom: none; }
+
+  /* ── Agentic Enterprise Architecture ── */
+  .arch-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 16px;
+  }
+
+  .arch-layer {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: stretch;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: border-color 0.25s;
+  }
+
+  .arch-layer:hover { border-color: var(--border-hover); }
+
+  .arch-layer-label {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .arch-layer-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .arch-layer-name {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .arch-layer-body {
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-left: 1px solid var(--border);
+  }
+
+  .arch-chip {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .arch-chip.highlight {
+    background: rgba(1,118,211,0.18);
+    border-color: rgba(1,118,211,0.4);
+    color: var(--blue-light);
+  }
+
+  .arch-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .layer-1 .arch-layer-label { background: rgba(1,118,211,0.2); }
+  .layer-2 .arch-layer-label { background: rgba(11,77,166,0.35); }
+  .layer-3 .arch-layer-label { background: rgba(3,45,96,0.5); }
+  .layer-4 .arch-layer-label { background: rgba(3,45,96,0.7); }
+
+  /* ── Proof Section ── */
+  .proof-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: all 0.25s;
+  }
+
+  .proof-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 40px var(--glow);
+  }
+
+  .proof-logo {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .proof-country {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .proof-clouds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .proof-result {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .proof-stat { text-align: center; }
+  .proof-stat-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--blue-light);
+    letter-spacing: -0.02em;
+  }
+  .proof-stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  .proof-insight {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 3px solid var(--blue);
+    padding-left: 16px;
+    margin-top: 16px;
+  }
+
+  /* ── Scenarios ── */
+  .scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+
+  .scenario-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 40px var(--glow);
+    transform: translateY(-3px);
+  }
+
+  .scenario-header {
+    padding: 24px 28px;
+    background: var(--bg-card-2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .scenario-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .scenario-title {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  .scenario-body { padding: 24px 28px; }
+
+  .scenario-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+  }
+
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    bottom: -10px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), rgba(1,118,211,0.1));
+  }
+
+  .flow-dot {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(1,118,211,0.2);
+    border: 2px solid var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue-light);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flow-content {
+    font-size: 14px;
+    padding-top: 4px;
+  }
+
+  .flow-content strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 2px; }
+  .flow-content span { color: var(--text-secondary); }
+
+  .scenario-value {
+    background: rgba(1,118,211,0.1);
+    border: 1px solid rgba(1,118,211,0.2);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--blue-light);
+    font-weight: 500;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ── Roadmap ── */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    position: relative;
+  }
+
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    top: 44px;
+    left: calc(33.33% / 2);
+    right: calc(33.33% / 2);
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 50%, rgba(27,150,255,0.3) 100%);
+    z-index: 0;
+  }
+
+  .phase {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    position: relative;
+    transition: all 0.25s;
+  }
+
+  .phase:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 32px var(--glow);
+  }
+
+  .phase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg);
+    border: 2px solid var(--blue);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--blue-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .phase-timeline {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .phase-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+
+  .phase-subtitle {
+    font-size: 13px;
+    color: var(--blue-light);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .phase-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .phase-deliverables {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .phase-deliverables li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+  }
+
+  .phase-deliverables li::before {
+    content: '→';
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0px;
+  }
+
+  /* ── ROI Section ── */
+  .roi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .roi-main {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+  }
+
+  .roi-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .roi-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .roi-stat-row:last-child { border-bottom: none; }
+
+  .roi-stat-row-label { font-size: 14px; color: var(--text-secondary); }
+  .roi-stat-row-value { font-size: 16px; font-weight: 700; }
+
+  .roi-urgency {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .urgency-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(228,0,43,0.25);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: all 0.25s;
+  }
+
+  .urgency-card:hover { border-color: rgba(228,0,43,0.5); }
+
+  .urgency-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+  .urgency-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .urgency-body { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ── Next Steps ── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .step-card:hover::after { opacity: 1; }
+  .step-card:hover { border-color: var(--border-hover); }
+
+  .step-num {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(1,118,211,0.2);
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  .step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .step-timing {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  footer .footer-logo {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Reveal Animations ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+  .reveal-delay-6 { transition-delay: 0.6s; }
+
+  /* ── Print ── */
+  #gate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #03060F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+
+  #gate.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  #gate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(1,118,211,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .gate-logos {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gate-logos .divider-line {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .gate-card {
+    background: rgba(7,16,31,0.9);
+    border: 1px solid rgba(1,118,211,0.2);
+    border-radius: 16px;
+    padding: 48px 52px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(1,118,211,0.1);
+  }
+
+  .gate-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .gate-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .gate-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .gate-input-wrap {
+    width: 100%;
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .gate-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(1,118,211,0.25);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.08em;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .gate-input::placeholder { color: var(--text-muted); letter-spacing: 0.04em; font-weight: 400; }
+  .gate-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(1,118,211,0.15); }
+
+  .gate-error {
+    font-size: 12px;
+    color: #FF6B81;
+    font-weight: 500;
+    height: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .gate-error.visible { opacity: 1; }
+
+  .gate-btn {
+    width: 100%;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .gate-btn:hover { background: var(--blue-light); }
+  .gate-btn:active { transform: scale(0.99); }
+
+  .gate-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ── Keyframes ── */
+  @keyframes heroSlideUp {
+    from { opacity: 0; transform: translateY(44px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes archSlideIn {
+    from { opacity: 0; transform: translateX(-32px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes numberPop {
+    0%   { transform: scale(1); }
+    45%  { transform: scale(1.14); }
+    100% { transform: scale(1); }
+  }
+  @keyframes phaseDrop {
+    from { opacity: 0; transform: translateY(-24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Hero entrance ── */
+  #hero .hero-badge    { animation: heroSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
+  #hero .hero-eyebrow  { animation: heroSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s  both; }
+  #hero .hero-title    { animation: heroSlideUp 1s   cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+  #hero .hero-subtitle { animation: heroSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.75s both; }
+  #hero .hero-meta     { animation: heroFadeIn  0.8s ease                       0.95s both; }
+  #hero .scroll-cue    { animation: heroFadeIn  0.8s ease                       1.25s both; }
+
+  /* ── Architecture layer cascade ── */
+  .arch-layers.visible .arch-layer { animation: archSlideIn 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+  .arch-layers.visible .arch-layer:nth-child(1) { animation-delay: 0.05s; }
+  .arch-layers.visible .arch-layer:nth-child(2) { animation-delay: 0.2s;  }
+  .arch-layers.visible .arch-layer:nth-child(3) { animation-delay: 0.35s; }
+  .arch-layers.visible .arch-layer:nth-child(4) { animation-delay: 0.5s;  }
+
+  /* ── Roadmap line draw ── */
+  .roadmap::before {
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 1.4s cubic-bezier(0.16,1,0.3,1) 0.35s;
+  }
+  .roadmap.line-drawn::before { transform: scaleX(1); }
+
+  /* ── Phase drop-in (triggered by JS) ── */
+  .phase.phase-animate { animation: phaseDrop 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+
+  /* ── Counter ── */
+  .counter { display: inline-block; }
+  .counter.popped { animation: numberPop 0.55s cubic-bezier(0.34,1.56,0.64,1); }
+
+  /* ── Team section ── */
+  #team { padding: 96px 48px; background: #060b14; }
+  .team-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 48px; }
+  .team-card {
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    width: 148px; text-align: center;
+  }
+  .team-avatar {
+    width: 104px; height: 104px; border-radius: 50%;
+    object-fit: cover; object-position: top center;
+    border: 3px solid rgba(1,118,211,0.45);
+    background: #0d1b2e;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .team-card:hover .team-avatar { border-color: var(--blue); transform: scale(1.05); }
+  .team-avatar-placeholder {
+    width: 104px; height: 104px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+    color: #fff; border: 3px solid rgba(1,118,211,0.45);
+    background: linear-gradient(135deg, #0176D3 0%, #032d60 100%);
+    flex-shrink: 0;
+  }
+  .team-name { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .team-role { font-size: 11.5px; font-weight: 500; color: var(--text-secondary); line-height: 1.4; }
+  @keyframes teamPop { from { opacity:0; transform:translateY(28px) scale(0.92); } to { opacity:1; transform:translateY(0) scale(1); } }
+  .team-card.team-animate { animation: teamPop 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+  @media (max-width: 600px) { #team { padding: 64px 24px; } .team-grid { gap: 28px; } .team-card { width: 120px; } .team-avatar, .team-avatar-placeholder { width: 88px; height: 88px; } }
+
+  @media print {
+    #gate { display: none !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    #main-nav { display: none !important; }
+    body { padding-top: 0; }
+    #hero { min-height: auto; padding-top: 60px; }
+    .scroll-cue { display: none; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Password Gate -->
+<div id="gate">
+  <div class="gate-logos">
+    <svg height="44" viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="28" cy="28" r="25.5" fill="none" stroke="white" stroke-width="3"/>
+      <path d="M 39 12 A 19 19 0 1 0 39 44" fill="none" stroke="white" stroke-width="9" stroke-linecap="butt"/>
+      <text x="52.5" y="9" font-family="'Inter', system-ui, sans-serif" font-size="8.5" fill="white" font-weight="400">®</text>
+      <text x="62" y="35" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="27" font-weight="800" fill="white" letter-spacing="-0.4">cirkel</text>
+      <text x="64" y="49" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="600" fill="white" letter-spacing="3">GROUP</text>
+    </svg>
+    <div class="divider-line"></div>
+    <img src="sf-cloud.svg" alt="Salesforce" style="height:40px;">
+  </div>
+  <div class="gate-card">
+    <div class="gate-eyebrow">Private Briefing</div>
+    <div class="gate-title">Strategic Briefing 2026</div>
+    <div class="gate-subtitle">This document is prepared exclusively<br>for the Cirkel Group team.</div>
+    <div class="gate-input-wrap">
+      <input id="gate-input" class="gate-input" type="password" placeholder="Enter access password" autocomplete="off" onkeydown="if(event.key==='Enter') checkPassword()">
+    </div>
+    <div id="gate-error" class="gate-error">Incorrect password. Please try again.</div>
+    <button class="gate-btn" onclick="checkPassword()">Access Briefing</button>
+    <div class="gate-note">Confidential · Salesforce × Cirkel Group N.V.</div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <div class="nav-brand">
+    <svg height="46" viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <circle cx="28" cy="28" r="25.5" fill="none" stroke="white" stroke-width="3"/>
+      <path d="M 39 12 A 19 19 0 1 0 39 44" fill="none" stroke="white" stroke-width="9" stroke-linecap="butt"/>
+      <text x="52.5" y="9" font-family="'Inter', system-ui, sans-serif" font-size="8.5" fill="white" font-weight="400">®</text>
+      <text x="62" y="35" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="27" font-weight="800" fill="white" letter-spacing="-0.4">cirkel</text>
+      <text x="64" y="49" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="600" fill="white" letter-spacing="3">GROUP</text>
+    </svg>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#listening">We Listened</a></li>
+    <li><a href="#today">Today</a></li>
+    <li><a href="#gap">The Gap</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#proof">Proof</a></li>
+    <li><a href="#scenarios">Scenarios</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#roi">ROI</a></li>
+    <li><a href="#next">Next Steps</a></li>
+    <li><a href="#team">Your Team</a></li>
+  </ul>
+  <img src="sf-cloud.svg" alt="Salesforce" style="height:44px; opacity:0.95; flex-shrink:0;">
+</nav>
+
+<!-- ─────────── HERO ─────────── -->
+<div id="hero">
+  <div class="hero-badge">Strategic Briefing · June 2026</div>
+  <div class="hero-eyebrow">Post-Discovery POV — Prepared for Cirkel Group N.V.</div>
+  <h1 class="hero-title">
+    The Agentic<br>
+    <span class="accent">Cirkel Group</span>
+  </h1>
+  <p class="hero-subtitle">
+    A private strategy briefing on how Salesforce can unify your customer data, activate loyalty, and deploy AI agents across all 11 stores.
+  </p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">Prepared for <span>Jordy Lamsberg &amp; the Cirkel Group team</span></div>
+    <div class="hero-meta-item">Presented by <span>Felipe Benavides · Salesforce</span></div>
+    <div class="hero-meta-item">Confidential</div>
+  </div>
+  <div class="scroll-cue">Begin</div>
+</div>
+
+<!-- ─────────── SECTION 1 — WE LISTENED ─────────── -->
+<section id="listening" style="padding-top: 120px;">
+  <div class="section-label">Discovery · June 9, 2026</div>
+  <h2 class="section-title">What We Heard</h2>
+  <p class="section-desc">
+    Six themes that define where Cirkel Group is today — and where the biggest opportunities lie.
+  </p>
+  <div class="grid-3">
+    <div class="listening-card reveal reveal-delay-1">
+      <div class="listening-num">01</div>
+      <div class="card-icon">📈</div>
+      <div class="card-title">The 4,300 Target Is Reachable — With the Right Tools</div>
+      <div class="card-body">You're running at ~3,800 transactions per store per month and targeting 4,300. That 13% gap isn't a foot-traffic problem — it's a data and personalization problem. You don't yet have the tools to identify who's lapsing, who to win back, or what offer will bring them back.</div>
+    </div>
+    <div class="listening-card reveal reveal-delay-2">
+      <div class="listening-num">02</div>
+      <div class="card-icon">💰</div>
+      <div class="card-title">Digital Orders Are Already Proving Their Value</div>
+      <div class="card-body">Your digital tickets are 30–40% higher than in-store average. You know digital customers spend more. But digital is a channel, not a strategy — without a unified customer profile, every digital order is still anonymous. You can't build loyalty on anonymous transactions.</div>
+    </div>
+    <div class="listening-card reveal reveal-delay-3">
+      <div class="listening-num">03</div>
+      <div class="card-icon">🔌</div>
+      <div class="card-title">Your Data Lives in Four Disconnected Systems</div>
+      <div class="card-body">TICTUK handles digital ordering. Ride Eats manages delivery. Shipday dispatches drivers. Invenpro runs your POS. Each system knows a piece of the customer — none of them talk to each other. Jordy is running the business on instinct because there's no unified view.</div>
+    </div>
+    <div class="listening-card reveal reveal-delay-4">
+      <div class="listening-num">04</div>
+      <div class="card-icon">🎯</div>
+      <div class="card-title">There Is No Loyalty Program</div>
+      <div class="card-body">Cirkel Group has no formal mechanism to reward repeat customers, identify your best customers, or detect when a loyal customer stops coming back. Every week you serve hundreds of repeat visitors with no recognition, no points, no reason to choose you over the competition next time.</div>
+    </div>
+    <div class="listening-card reveal reveal-delay-5">
+      <div class="listening-num">05</div>
+      <div class="card-icon">📣</div>
+      <div class="card-title">Marketing Is Broadcast, Not Targeted</div>
+      <div class="card-body">Current marketing is mass communication — the same message to everyone. No segmentation, no personalization, no campaign attribution. You can't see which promotions drove foot traffic, which ones didn't, or which customer segments respond to what offer.</div>
+    </div>
+    <div class="listening-card reveal reveal-delay-6">
+      <div class="listening-num">06</div>
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Operations Are Reactive — Agentforce Changes That</div>
+      <div class="card-body">Today, Jordy and store managers react to problems. Long lines, slow kitchens, below-target days — there's no early warning system. Agentforce can shift operations from reactive to proactive: daily AI-generated briefings surfacing which stores need attention and what actions to take.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SECTION 2 — TODAY'S REALITY ─────────── -->
+<div class="alt-bg" id="today">
+  <div class="section-inner">
+    <div class="section-label">Current State</div>
+    <h2 class="section-title">Where You Are Today</h2>
+    <p class="section-desc">
+      11 stores. Four platforms. No unified customer record. Strong operations, fragile data.
+    </p>
+    <div class="stack-diagram">
+      <div class="stack-column reveal">
+        <div class="stack-column-header" style="color: var(--text-secondary);">Your Current Tech Stack</div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-blue">🍗</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">TICTUK</div>
+            <div class="stack-item-desc">Digital ordering for KFC &amp; Pizza Hut. Yum! Brands integrated platform — strong on ordering, silent on customer identity.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-blue">🛵</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">Ride Eats</div>
+            <div class="stack-item-desc">Delivery channel. Another source of customer transaction data that sits in isolation.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-blue">📦</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">Shipday</div>
+            <div class="stack-item-desc">Dispatch and driver management. Operational data with no connection to customer profiles.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-blue">🧾</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">Invenpro POS</div>
+            <div class="stack-item-desc">Point-of-sale across all 11 stores. The system of record for in-store transactions — but completely isolated from digital channels.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-muted">💱</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">Western Union</div>
+            <div class="stack-item-desc">Revenue diversification line. High-frequency customer touchpoint with no connection to the QSR customer database.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-column reveal reveal-delay-2" style="border-color: rgba(228,0,43,0.2);">
+        <div class="stack-column-header" style="color: rgba(255,107,129,0.9);">Critical Gaps</div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-red">❌</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">No CRM</div>
+            <div class="stack-item-desc">No account for accounts. Jordy's team has no customer records, no history, no relationship data.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-red">❌</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">No Unified Customer Profile</div>
+            <div class="stack-item-desc">The same customer ordering through TICTUK, walking in-store, and picking up via Ride Eats is three different anonymous people in your data.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-red">❌</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">No Loyalty Program</div>
+            <div class="stack-item-desc">No points, no rewards, no recognition. Your best customers get the same experience as a first-time visitor.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-red">❌</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">No Targeted Marketing</div>
+            <div class="stack-item-desc">No segmentation capability. No personalization. No way to measure which campaigns work.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item-icon icon-bg-red">❌</div>
+          <div class="stack-item-text">
+            <div class="stack-item-title">No AI-Assisted Operations</div>
+            <div class="stack-item-desc">Store managers and Jordy operate without predictive insights, performance forecasting, or automated recommendations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── SECTION 3 — THE GAP ─────────── -->
+<section id="gap">
+  <div class="section-label">Before &amp; After</div>
+  <h2 class="section-title">The Gap We're Closing</h2>
+  <p class="section-desc">
+    Where Cirkel Group operates today — and where Salesforce takes you.
+  </p>
+  <div class="reveal">
+  <table class="gap-table">
+    <thead>
+      <tr>
+        <th>Capability</th>
+        <th>Today</th>
+        <th>With Salesforce</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customer Identity</td>
+        <td>Anonymous transactions across 4 disconnected systems</td>
+        <td>Unified customer profile in Data Cloud — one record across TICTUK, Invenpro, Ride Eats, and loyalty</td>
+      </tr>
+      <tr>
+        <td>Loyalty</td>
+        <td>No program. No recognition for repeat customers.</td>
+        <td>Loyalty Management: points, tiers, automated rewards triggered by customer behavior</td>
+      </tr>
+      <tr>
+        <td>Marketing</td>
+        <td>Broadcast campaigns with no segmentation or attribution</td>
+        <td>Marketing Cloud: segmented journeys, personalized WhatsApp messages, A/B testing, real-time campaign ROI</td>
+      </tr>
+      <tr>
+        <td>CRM</td>
+        <td>No customer records. Business knowledge lives in Jordy's head.</td>
+        <td>Sales Cloud: account management, pipeline tracking, team collaboration, contact history</td>
+      </tr>
+      <tr>
+        <td>Operations</td>
+        <td>Reactive. Jordy learns about a problem after it happens.</td>
+        <td>Agentforce: AI agents send daily store briefings, surface underperformance early, suggest corrective actions</td>
+      </tr>
+      <tr>
+        <td>Digital Growth</td>
+        <td>Digital channel active but undermonetized — no follow-through</td>
+        <td>Personalized post-order journeys via Marketing Cloud — upsell, cross-sell, re-engage lapsed customers</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ─────────── SECTION 4 — AGENTIC ENTERPRISE ─────────── -->
+<div class="alt-bg" id="vision">
+  <div class="section-inner">
+    <div class="section-label">Salesforce POV</div>
+    <h2 class="section-title">The Agentic Enterprise</h2>
+    <p class="section-desc">
+      The companies winning in the next decade won't just be digital — they'll be agentic. Four layers. One platform. Built for what's coming.
+    </p>
+    <div class="arch-layers reveal">
+      <div class="arch-layer layer-1">
+        <div class="arch-layer-label">
+          <div class="arch-layer-num">Layer 01</div>
+          <div class="arch-layer-name">Context</div>
+        </div>
+        <div class="arch-layer-body">
+          <span class="arch-chip highlight">Data Cloud</span>
+          <span class="arch-desc">Unify every customer signal — orders, loyalty, delivery, in-store — into a single profile. This is the foundation. Without it, AI is just guessing.</span>
+        </div>
+      </div>
+      <div class="arch-layer layer-2">
+        <div class="arch-layer-label">
+          <div class="arch-layer-num">Layer 02</div>
+          <div class="arch-layer-name">Work</div>
+        </div>
+        <div class="arch-layer-body">
+          <span class="arch-chip highlight">Sales Cloud</span>
+          <span class="arch-chip">Service Cloud</span>
+          <span class="arch-chip highlight">Loyalty Management</span>
+          <span class="arch-desc">The systems where work happens. CRM for your team. Loyalty for your customers. Service for when things go wrong.</span>
+        </div>
+      </div>
+      <div class="arch-layer layer-3">
+        <div class="arch-layer-label">
+          <div class="arch-layer-num">Layer 03</div>
+          <div class="arch-layer-name">Agency</div>
+        </div>
+        <div class="arch-layer-body">
+          <span class="arch-chip highlight">Agentforce</span>
+          <span class="arch-desc">AI agents that act — not just answer. A Store Performance Agent that briefs Jordy every morning. A Customer Re-engagement Agent that runs loyalty campaigns automatically. A Service Agent that handles WhatsApp inquiries 24/7.</span>
+        </div>
+      </div>
+      <div class="arch-layer layer-4">
+        <div class="arch-layer-label">
+          <div class="arch-layer-num">Layer 04</div>
+          <div class="arch-layer-name">Engagement</div>
+        </div>
+        <div class="arch-layer-body">
+          <span class="arch-chip highlight">Marketing Cloud</span>
+          <span class="arch-chip">WhatsApp</span>
+          <span class="arch-chip">Email</span>
+          <span class="arch-desc">Personalized messages delivered at the right moment, on the right channel. Triggered by customer behavior in Data Cloud. Executed at scale — automatically.</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px; padding:28px 32px; background:rgba(1,118,211,0.08); border:1px solid rgba(1,118,211,0.2); border-radius:var(--radius); max-width: 700px; reveal">
+      <p style="font-size:16px; font-weight:600; color:var(--text); line-height:1.5; margin-bottom:12px;">"The gap between digital transformation and the agentic enterprise is the difference between having data and having AI that acts on it."</p>
+      <p style="font-size:13px; color:var(--text-secondary);">Cirkel Group has the transactions. The next step is connecting them — so every customer interaction becomes an input to a system that learns, personalizes, and acts automatically.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── SECTION 5 — PROOF ─────────── -->
+<section id="proof">
+  <div class="section-label">Reference Customers</div>
+  <h2 class="section-title">Brands Like Yours Have Done This</h2>
+  <p class="section-desc">
+    QSR franchise operators in Latin America are already on this journey with Salesforce.
+  </p>
+  <div class="grid-3">
+    <div class="proof-card reveal reveal-delay-1">
+      <div class="proof-logo">El Corral</div>
+      <div class="proof-country">🇨🇴 Colombia · QSR Burger Franchise</div>
+      <div class="proof-clouds">
+        <span class="tag tag-blue">Data Cloud</span>
+        <span class="tag tag-blue">Marketing Cloud</span>
+        <span class="tag tag-blue">Loyalty Management</span>
+        <span class="tag tag-blue">Service Cloud</span>
+      </div>
+      <p class="card-body" style="margin-bottom:16px;">El Corral deployed the full Salesforce stack — from Data Cloud unifying their POS and digital ordering data, to personalized Marketing Cloud campaigns and a Loyalty Management program that transformed repeat visit rates.</p>
+      <p class="proof-insight">The architecture Salesforce designed for El Corral is the reference blueprint for Cirkel Group. Same franchise model. Same QSR challenges. Different market — same opportunity.</p>
+    </div>
+    <div class="proof-card reveal reveal-delay-2">
+      <div class="proof-logo">Juan Valdez</div>
+      <div class="proof-country">🇨🇴 Colombia · QSR Coffee Franchise</div>
+      <div class="proof-clouds">
+        <span class="tag tag-blue">Data Cloud</span>
+        <span class="tag tag-blue">Marketing Cloud</span>
+        <span class="tag tag-blue">Agentforce</span>
+      </div>
+      <p class="card-body" style="margin-bottom:16px;">Juan Valdez implemented Salesforce as part of their Agentic World Tour initiative — using Data Cloud to unify customer signals across channels and Marketing Cloud to run personalized loyalty campaigns at national scale.</p>
+      <p class="proof-insight">A leading QSR coffee brand using the same technology stack we're proposing for Cirkel Group — demonstrating that Agentforce works in the QSR context at franchise scale.</p>
+    </div>
+    <div class="proof-card reveal reveal-delay-3">
+      <div class="proof-logo">QSR Industry Benchmarks</div>
+      <div class="proof-country">🌎 Global · Salesforce State of Connected Customer</div>
+      <div class="proof-clouds">
+        <span class="tag tag-gold">Industry Data</span>
+      </div>
+      <p class="card-body" style="margin-bottom:16px;">Across Salesforce's QSR customer base, brands deploying Data Cloud + Loyalty see:</p>
+      <div class="proof-result">
+        <div class="proof-stat">
+          <div class="proof-stat-num"><span class="counter" data-target="2" data-suffix="×">2×</span></div>
+          <div class="proof-stat-label">Repeat visit rate with personalized loyalty</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num"><span class="counter" data-target="35" data-suffix="%">35%</span></div>
+          <div class="proof-stat-label">Average increase in digital order value</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num"><span class="counter" data-target="60" data-suffix="%">60%</span></div>
+          <div class="proof-stat-label">Reduction in customer churn with targeted re-engagement</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">6mo</div>
+          <div class="proof-stat-label">Typical time to first meaningful campaign results</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SECTION 6 — SCENARIOS ─────────── -->
+<div class="alt-bg" id="scenarios">
+  <div class="section-inner">
+    <div class="section-label">Demo Preview</div>
+    <h2 class="section-title">What This Looks Like in Practice</h2>
+    <p class="section-desc">
+      Three scenarios — each one built from what you told us on June 9.
+    </p>
+    <div class="grid-3">
+
+      <!-- Scenario 1 -->
+      <div class="scenario-card reveal reveal-delay-1">
+        <div class="scenario-header">
+          <div class="scenario-num">Scenario 01</div>
+          <div class="scenario-title">Win Back the Lapsed Customer</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+            <span class="tag tag-blue">Data Cloud</span>
+            <span class="tag tag-blue">Marketing Cloud</span>
+            <span class="tag tag-green">Automated</span>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <p class="card-body" style="margin-bottom:16px;">A customer who ordered 3 times in January hasn't come back in 45 days. Today, you'd never know. With Salesforce:</p>
+          <div class="scenario-flow">
+            <div class="flow-step">
+              <div class="flow-dot">1</div>
+              <div class="flow-content">
+                <strong>Data Cloud detects the gap</strong>
+                <span>Customer profile flags "45 days since last order" based on unified transaction history</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-dot">2</div>
+              <div class="flow-content">
+                <strong>Journey triggers automatically</strong>
+                <span>Marketing Cloud launches a "We miss you" WhatsApp message with a personalized KFC offer based on their order history</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-dot">3</div>
+              <div class="flow-content">
+                <strong>Loyalty points added on redemption</strong>
+                <span>Customer returns, redeems offer, earns points — re-engagement loop activated</span>
+              </div>
+            </div>
+          </div>
+          <div class="scenario-value">💡 Target: recover 15% of lapsed customers per quarter — incremental revenue with zero additional marketing spend</div>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="scenario-card reveal reveal-delay-2">
+        <div class="scenario-header">
+          <div class="scenario-num">Scenario 02</div>
+          <div class="scenario-title">The Morning Store Briefing</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+            <span class="tag tag-blue">Agentforce</span>
+            <span class="tag tag-blue">Data Cloud</span>
+            <span class="tag tag-gold">AI-Powered</span>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <p class="card-body" style="margin-bottom:16px;">Every morning at 7:30am, Jordy receives an AI-generated briefing — before his first coffee. Today, he has no structured view into store performance until something breaks.</p>
+          <div class="scenario-flow">
+            <div class="flow-step">
+              <div class="flow-dot">1</div>
+              <div class="flow-content">
+                <strong>Agentforce aggregates overnight data</strong>
+                <span>Pulls last 24h transactions, delivery completion rates, and loyalty redemptions across all 11 stores</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-dot">2</div>
+              <div class="flow-content">
+                <strong>Agent generates the daily briefing</strong>
+                <span>"Store 5 (KFC — Paramaribo South) is 18% below 7-day average. Likely cause: delivery delays via Ride Eats on Tuesday. Suggested actions: [3 options]"</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-dot">3</div>
+              <div class="flow-content">
+                <strong>Jordy responds in natural language</strong>
+                <span>He replies "Approve option 2" — the agent executes the follow-up and logs it</span>
+              </div>
+            </div>
+          </div>
+          <div class="scenario-value">💡 From reactive management to proactive leadership — Jordy becomes a general with a command view, not a firefighter</div>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="scenario-card reveal reveal-delay-3">
+        <div class="scenario-header">
+          <div class="scenario-num">Scenario 03</div>
+          <div class="scenario-title">Launch the First Loyalty Campaign</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+            <span class="tag tag-blue">Loyalty Management</span>
+            <span class="tag tag-blue">Marketing Cloud</span>
+            <span class="tag tag-green">First 90 Days</span>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <p class="card-body" style="margin-bottom:16px;">90 days after go-live, Cirkel Group has a working loyalty program and its first segmented campaign. This is the moment the investment starts paying back.</p>
+          <div class="scenario-flow">
+            <div class="flow-step">
+              <div class="flow-dot">1</div>
+              <div class="flow-content">
+                <strong>Data Cloud has built customer profiles</strong>
+                <span>3 months of connected data: who orders online vs in-store, average frequency, average spend, preferred location</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-dot">2</div>
+              <div class="flow-content">
+                <strong>Loyalty Management identifies your "VIP 500"</strong>
+                <span>Top 500 customers by lifetime value get a Gold tier upgrade and a double-points weekend invitation — sent via WhatsApp</span>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-dot">3</div>
+              <div class="flow-content">
+                <strong>Campaign performance tracked in real time</strong>
+                <span>Redemption rate, incremental spend, and store traffic attributed to campaign — something Cirkel Group has never had before</span>
+              </div>
+            </div>
+          </div>
+          <div class="scenario-value">💡 Your best customers become your most loyal ones — and you finally know who they are</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── SECTION 7 — ROADMAP ─────────── -->
+<section id="roadmap">
+  <div class="section-label">18-Month Plan</div>
+  <h2 class="section-title">Your Journey in Three Phases</h2>
+  <p class="section-desc">
+    A phased approach that delivers value at every stage — from foundation to full AI deployment.
+  </p>
+  <div class="roadmap">
+    <div class="phase reveal reveal-delay-1">
+      <div class="phase-badge">Phase 1</div>
+      <div class="phase-timeline">Q3 — Q4 2026</div>
+      <div class="phase-title">Foundation</div>
+      <div class="phase-subtitle">Build the data backbone</div>
+      <div class="phase-desc">Unify all customer data into a single platform. Get Jordy's team working out of a CRM. Connect TICTUK, Invenpro, and Ride Eats into Data Cloud.</div>
+      <ul class="phase-deliverables">
+        <li>Data Cloud: unified customer profile across all channels</li>
+        <li>Sales Cloud: CRM for Cirkel Group team</li>
+        <li>TICTUK + Invenpro + Ride Eats data connectors</li>
+        <li>First customer segmentation model live</li>
+        <li>Basic reporting dashboard for Jordy</li>
+      </ul>
+    </div>
+    <div class="phase reveal reveal-delay-2" style="border-color: rgba(27,150,255,0.3);">
+      <div class="phase-badge">Phase 2</div>
+      <div class="phase-timeline">Q1 — Q2 2027</div>
+      <div class="phase-title">Activate</div>
+      <div class="phase-subtitle">Turn data into customer relationships</div>
+      <div class="phase-desc">Launch the loyalty program. Activate personalized marketing journeys. Start measuring what works.</div>
+      <ul class="phase-deliverables">
+        <li>Loyalty Management: points, tiers, automated rewards</li>
+        <li>Marketing Cloud Engagement: WhatsApp + email journeys</li>
+        <li>First re-engagement campaign (lapsed customers)</li>
+        <li>Birthday &amp; milestone offers automated</li>
+        <li>Campaign attribution reporting live</li>
+      </ul>
+    </div>
+    <div class="phase reveal reveal-delay-3" style="border-color: rgba(27,150,255,0.5);">
+      <div class="phase-badge">Phase 3</div>
+      <div class="phase-timeline">Q3 2027 onward</div>
+      <div class="phase-title">Intelligence</div>
+      <div class="phase-subtitle">Deploy AI across the business</div>
+      <div class="phase-desc">Agentforce agents take over routine operational decisions. Jordy scales across 11+ stores without adding headcount.</div>
+      <ul class="phase-deliverables">
+        <li>Agentforce Store Performance Agent (daily briefings)</li>
+        <li>Customer Re-engagement Agent (automated win-back)</li>
+        <li>WhatsApp Service Agent (24/7 customer support)</li>
+        <li>Predictive transaction forecasting per store</li>
+        <li>Foundation for Western Union cross-sell intelligence</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top: 32px; font-size: 13px; color: var(--text-muted); text-align: center;">Timeline assumes Q3 2026 kickoff. Each phase delivers standalone value — the investment pays back before Phase 3 begins.</p>
+</section>
+
+<!-- ─────────── SECTION 8 — ROI ─────────── -->
+<div class="alt-bg" id="roi">
+  <div class="section-inner">
+    <div class="section-label">Business Case</div>
+    <h2 class="section-title">The Cost of Waiting</h2>
+    <p class="section-desc">
+      Every month without a unified data platform is another month of anonymous customers, untargeted marketing, and invisible churn.
+    </p>
+    <div class="roi-grid">
+      <div class="roi-main reveal">
+        <div class="section-label" style="margin-bottom:24px;">Your Numbers</div>
+        <div class="roi-stats">
+          <div class="roi-stat-row">
+            <span class="roi-stat-row-label">Monthly transactions (11 stores × 3,800)</span>
+            <span class="roi-stat-row-value" style="color:var(--text-secondary);">~<span class="counter" data-target="41800">41,800</span></span>
+          </div>
+          <div class="roi-stat-row">
+            <span class="roi-stat-row-label">Transaction gap to your 4,300 target</span>
+            <span class="roi-stat-row-value" style="color:var(--gold);">+<span class="counter" data-target="5500">5,500</span> / month</span>
+          </div>
+          <div class="roi-stat-row">
+            <span class="roi-stat-row-label">Digital ticket premium vs in-store average</span>
+            <span class="roi-stat-row-value" style="color:var(--blue-light);">30–40%</span>
+          </div>
+          <div class="roi-stat-row">
+            <span class="roi-stat-row-label">Est. incremental revenue at 20% digital penetration increase</span>
+            <span class="roi-stat-row-value" style="color:var(--green);">Significant</span>
+          </div>
+          <div class="roi-stat-row">
+            <span class="roi-stat-row-label">Months until first loyalty campaign can run</span>
+            <span class="roi-stat-row-value" style="color:var(--blue-light);">3–4 (Phase 1 complete)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="roi-urgency">
+        <div class="urgency-card reveal reveal-delay-1">
+          <span class="urgency-icon">🔄</span>
+          <div class="urgency-title">Every Anonymous Transaction Is a Missed Re-engagement</div>
+          <div class="urgency-body">Each of your 41,800 monthly transactions happens without a customer identity. You can't thank them, reward them, or win them back. That's 41,800 opportunities per month to build a relationship — going untracked.</div>
+        </div>
+        <div class="urgency-card reveal reveal-delay-2">
+          <span class="urgency-icon">📉</span>
+          <div class="urgency-title">Churn Is Invisible Without a Loyalty System</div>
+          <div class="urgency-body">Without a loyalty program, you can't see when a loyal customer stops coming back. By the time you notice, they're your competitor's customer. The first time a competitor in Suriname launches a loyalty program, your best customers have a reason to switch.</div>
+        </div>
+        <div class="urgency-card reveal reveal-delay-3">
+          <span class="urgency-icon">🎯</span>
+          <div class="urgency-title">The Digital Premium Needs a Strategy to Scale It</div>
+          <div class="urgency-body">You already know digital orders are worth 30–40% more. But digital penetration doesn't grow by itself — it grows through personalized re-engagement, loyalty incentives, and post-order journeys. The technology gap is the only thing standing between you and that uplift at scale.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── SECTION 9 — NEXT STEPS ─────────── -->
+<section id="next">
+  <div class="section-label">What Happens Now</div>
+  <h2 class="section-title">Next Steps</h2>
+  <p class="section-desc">
+    Four concrete actions to move from this briefing to a signed pilot.
+  </p>
+  <div class="steps-grid">
+    <div class="step-card reveal reveal-delay-1">
+      <div class="step-num">01</div>
+      <div class="step-timing">July 2026</div>
+      <div class="step-title">Technical Discovery</div>
+      <div class="step-desc">A focused call with Cirkel Group's IT team to map the TICTUK and Invenpro API documentation. We confirm integration approach and scope for Phase 1 Data Cloud connectors.</div>
+    </div>
+    <div class="step-card reveal reveal-delay-2">
+      <div class="step-num">02</div>
+      <div class="step-timing">July 2026</div>
+      <div class="step-title">Executive Alignment</div>
+      <div class="step-desc">Introduce Justin to the full business case — Phase 1 investment, expected Phase 2 outcomes, and how the roadmap connects to his 4,300 transaction target. One hour. Decision-ready.</div>
+    </div>
+    <div class="step-card reveal reveal-delay-3">
+      <div class="step-num">03</div>
+      <div class="step-timing">August 2026</div>
+      <div class="step-title">Pilot Proposal</div>
+      <div class="step-desc">Salesforce delivers a formal proposal: 2-store Data Cloud + Sales Cloud pilot. Scoped deliverables, timeline, investment, and success metrics defined. Design Partner consideration for Suriname market.</div>
+    </div>
+    <div class="step-card reveal reveal-delay-4">
+      <div class="step-num">04</div>
+      <div class="step-timing">Q3 2026</div>
+      <div class="step-title">Pilot Kickoff</div>
+      <div class="step-desc">Go-live on two stores. Data Cloud unified profiles up and running. Jordy's team in Sales Cloud. First baseline data captured. 90 days to first loyalty campaign.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="card reveal" style="background: rgba(1,118,211,0.07); border-color: rgba(1,118,211,0.35);">
+      <div style="font-size:13px; font-weight:700; color:var(--blue-light); margin-bottom:12px; letter-spacing:0.06em; text-transform:uppercase;">The Commitment</div>
+      <p style="font-size:15px; color:var(--text); line-height:1.6; font-weight:500;">Salesforce is not proposing a software license. We're proposing a partnership — with a phased roadmap, dedicated support, and a team that's accountable for your outcomes at every stage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SECTION 10 — YOUR TEAM ─────────── -->
+<section id="team">
+  <div class="section-label">The People Behind the Plan</div>
+  <h2 class="section-title">Your Salesforce Team</h2>
+  <p class="section-desc">Dedicated specialists across sales, AI, marketing, and technical consulting — accountable for your outcomes at every stage.</p>
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img class="team-avatar" src="team/angela.jpg" alt="Angela Hurtado"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="team-avatar-placeholder" style="display:none;">AH</div>
+      <div class="team-name">Angela Hurtado</div>
+      <div class="team-role">Marketing Account Executive</div>
+    </div>
+
+    <div class="team-card">
+      <img class="team-avatar" src="team/felipe.jpg" alt="Felipe Benavides"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="team-avatar-placeholder" style="display:none;">FB</div>
+      <div class="team-name">Felipe Benavides</div>
+      <div class="team-role">Named Account Executive</div>
+    </div>
+
+    <div class="team-card">
+      <img class="team-avatar" src="team/juanpablo.jpg" alt="Juan Pablo Gomez"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="team-avatar-placeholder" style="display:none;">JP</div>
+      <div class="team-name">Juan Pablo Gomez</div>
+      <div class="team-role">Lead, Account SE</div>
+    </div>
+
+    <div class="team-card">
+      <img class="team-avatar" src="team/santiago-c.jpg" alt="Santiago Castelli"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="team-avatar-placeholder" style="display:none;">SC</div>
+      <div class="team-name">Santiago Castelli</div>
+      <div class="team-role">AI Account Executive</div>
+    </div>
+
+    <div class="team-card">
+      <img class="team-avatar" src="team/santiago-r.jpg" alt="Santiago Romagosa"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="team-avatar-placeholder" style="display:none;">SR</div>
+      <div class="team-name">Santiago Romagosa</div>
+      <div class="team-role">Business Development Rep</div>
+    </div>
+
+    <div class="team-card">
+      <img class="team-avatar" src="team/valentina.jpg" alt="Valentina Aguirre"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="team-avatar-placeholder" style="display:none;">VA</div>
+      <div class="team-name">Valentina Aguirre</div>
+      <div class="team-role">Business Development Rep</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+    <img src="sf-horiz-white.svg" alt="Salesforce" style="height:40px; opacity:0.8;">
+  </div>
+  <p>Confidential — Prepared exclusively for Cirkel Group N.V. · Not for distribution</p>
+  <p style="margin-top:8px;">Salesforce · Enterprise, English Speaking Caribbean · June 2026</p>
+</footer>
+
+<script>
+  // ── Password gate ──
+  (function() {
+    if (sessionStorage.getItem('cg_auth') === '1') {
+      document.getElementById('gate').classList.add('hidden');
+    }
+  })();
+
+  function checkPassword() {
+    const val = document.getElementById('gate-input').value;
+    const err = document.getElementById('gate-error');
+    if (val === 'CIRKEL2026') {
+      sessionStorage.setItem('cg_auth', '1');
+      document.getElementById('gate').classList.add('hidden');
+      err.classList.remove('visible');
+    } else {
+      err.classList.add('visible');
+      document.getElementById('gate-input').value = '';
+      document.getElementById('gate-input').focus();
+    }
+  }
+
+  // ── Intersection Observer: reveal on scroll ──
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // ── Active nav link ──
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-56px 0px -50% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  // ── Animated counters ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = target > 1000 ? 2000 : 1200;
+    const start = performance.now();
+    function update(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(eased * target);
+      el.textContent = val.toLocaleString() + suffix;
+      if (p < 1) { requestAnimationFrame(update); }
+      else {
+        el.textContent = target.toLocaleString() + suffix;
+        el.classList.add('popped');
+        el.addEventListener('animationend', () => el.classList.remove('popped'), { once: true });
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.done) {
+        e.target.dataset.done = '1';
+        animateCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+  // ── Roadmap line draw ──
+  const roadmapEl = document.querySelector('.roadmap');
+  if (roadmapEl) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('line-drawn');
+          // Cascade phases in
+          e.target.querySelectorAll('.phase').forEach((ph, i) => {
+            setTimeout(() => ph.classList.add('phase-animate'), i * 200);
+          });
+        }
+      });
+    }, { threshold: 0.25 }).observe(roadmapEl);
+  }
+
+  // ── Flow step cascade inside scenario cards ──
+  document.querySelectorAll('.scenario-card').forEach(card => {
+    const steps = card.querySelectorAll('.flow-step');
+    steps.forEach(s => { s.style.opacity = '0'; s.style.transform = 'translateX(-18px)'; s.style.transition = 'opacity 0.45s ease, transform 0.45s ease'; });
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          steps.forEach((s, i) => setTimeout(() => { s.style.opacity = '1'; s.style.transform = 'translateX(0)'; }, 350 + i * 220));
+          e.target._flowDone = true;
+        }
+      });
+    }, { threshold: 0.3 }).observe(card);
+  });
+
+  // ── Architecture layer cascade ──
+  // Handled via CSS on .arch-layers.visible — already observed by main reveal observer
+
+  // ── Team card cascade ──
+  const teamGrid = document.querySelector('.team-grid');
+  if (teamGrid) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.team-card').forEach((card, i) => {
+            setTimeout(() => card.classList.add('team-animate'), i * 110);
+          });
+        }
+      });
+    }, { threshold: 0.2 }).observe(teamGrid);
+  }
+</script>
+</body>
+</html>
