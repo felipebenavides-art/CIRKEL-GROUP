@@ -1209,6 +1209,12 @@
   .counter { display: inline-block; }
   .counter.popped { animation: numberPop 0.55s cubic-bezier(0.34,1.56,0.64,1); }
 
+  /* ── Product icons ── */
+  .pi { width: 22px; height: 22px; vertical-align: middle; margin-right: 6px; flex-shrink: 0; }
+  .pi-sm { width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; flex-shrink: 0; }
+  .arch-chip { display: inline-flex; align-items: center; }
+  .tag { display: inline-flex; align-items: center; }
+
   /* ── Live Demo section ── */
   #demo {
     padding: 96px 48px;
@@ -1580,7 +1586,7 @@
           <div class="arch-layer-name">Context</div>
         </div>
         <div class="arch-layer-body">
-          <span class="arch-chip highlight">Data Cloud</span>
+          <span class="arch-chip highlight"><img src="icons/data-cloud.svg" class="pi" alt="">Data Cloud</span>
           <span class="arch-desc">One profile across every touchpoint — the foundation AI needs to act.</span>
         </div>
       </div>
@@ -1590,9 +1596,9 @@
           <div class="arch-layer-name">Work</div>
         </div>
         <div class="arch-layer-body">
-          <span class="arch-chip highlight">Sales Cloud</span>
-          <span class="arch-chip">Service Cloud</span>
-          <span class="arch-chip highlight">Loyalty Management</span>
+          <span class="arch-chip highlight"><img src="icons/sales.svg" class="pi" alt="">Sales Cloud</span>
+          <span class="arch-chip"><img src="icons/service.svg" class="pi" alt="">Service Cloud</span>
+          <span class="arch-chip highlight"><img src="icons/loyalty.svg" class="pi" alt="">Loyalty Management</span>
           <span class="arch-desc">CRM, loyalty, and service — all in one platform.</span>
         </div>
       </div>
@@ -1602,7 +1608,7 @@
           <div class="arch-layer-name">Agency</div>
         </div>
         <div class="arch-layer-body">
-          <span class="arch-chip highlight">Agentforce</span>
+          <span class="arch-chip highlight"><img src="icons/agentforce.svg" class="pi" alt="">Agentforce</span>
           <span class="arch-desc">Agents that act, not just answer — briefings, campaigns, and support, automated.</span>
         </div>
       </div>
@@ -1612,7 +1618,7 @@
           <div class="arch-layer-name">Engagement</div>
         </div>
         <div class="arch-layer-body">
-          <span class="arch-chip highlight">Marketing Cloud</span>
+          <span class="arch-chip highlight"><img src="icons/marketing.svg" class="pi" alt="">Marketing Cloud</span>
           <span class="arch-chip">WhatsApp</span>
           <span class="arch-chip">Email</span>
           <span class="arch-desc">Right message, right channel, right moment — triggered and executed automatically.</span>
@@ -1634,10 +1640,10 @@
       <div class="proof-logo">El Corral</div>
       <div class="proof-country">🇨🇴 Colombia · QSR Burger Franchise</div>
       <div class="proof-clouds">
-        <span class="tag tag-blue">Data Cloud</span>
-        <span class="tag tag-blue">Marketing Cloud</span>
-        <span class="tag tag-blue">Loyalty Management</span>
-        <span class="tag tag-blue">Service Cloud</span>
+        <span class="tag tag-blue"><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud</span>
+        <span class="tag tag-blue"><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud</span>
+        <span class="tag tag-blue"><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management</span>
+        <span class="tag tag-blue"><img src="icons/service.svg" class="pi-sm" alt="">Service Cloud</span>
       </div>
       <p class="proof-insight">The El Corral architecture is the reference blueprint for Cirkel Group — same franchise model, same QSR challenges, different market.</p>
     </div>
@@ -1645,9 +1651,9 @@
       <div class="proof-logo">Juan Valdez</div>
       <div class="proof-country">🇨🇴 Colombia · QSR Coffee Franchise</div>
       <div class="proof-clouds">
-        <span class="tag tag-blue">Data Cloud</span>
-        <span class="tag tag-blue">Marketing Cloud</span>
-        <span class="tag tag-blue">Agentforce</span>
+        <span class="tag tag-blue"><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud</span>
+        <span class="tag tag-blue"><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud</span>
+        <span class="tag tag-blue"><img src="icons/agentforce.svg" class="pi-sm" alt="">Agentforce</span>
       </div>
       <p class="proof-insight">Agentforce and Data Cloud running at franchise scale — the same stack we're proposing for Cirkel Group.</p>
     </div>
@@ -1713,8 +1719,8 @@
           <div class="scenario-num">Scenario 01</div>
           <div class="scenario-title">Win Back the Lapsed Customer</div>
           <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
-            <span class="tag tag-blue">Data Cloud</span>
-            <span class="tag tag-blue">Marketing Cloud</span>
+            <span class="tag tag-blue"><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud</span>
+            <span class="tag tag-blue"><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud</span>
             <span class="tag tag-green">Automated</span>
           </div>
         </div>
@@ -1752,8 +1758,8 @@
           <div class="scenario-num">Scenario 02</div>
           <div class="scenario-title">The Morning Store Briefing</div>
           <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
-            <span class="tag tag-blue">Agentforce</span>
-            <span class="tag tag-blue">Data Cloud</span>
+            <span class="tag tag-blue"><img src="icons/agentforce.svg" class="pi-sm" alt="">Agentforce</span>
+            <span class="tag tag-blue"><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud</span>
             <span class="tag tag-gold">AI-Powered</span>
           </div>
         </div>
@@ -1791,8 +1797,8 @@
           <div class="scenario-num">Scenario 03</div>
           <div class="scenario-title">Launch the First Loyalty Campaign</div>
           <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
-            <span class="tag tag-blue">Loyalty Management</span>
-            <span class="tag tag-blue">Marketing Cloud</span>
+            <span class="tag tag-blue"><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management</span>
+            <span class="tag tag-blue"><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud</span>
             <span class="tag tag-green">First 90 Days</span>
           </div>
         </div>
@@ -1839,9 +1845,9 @@
       <div class="phase-title">Foundation</div>
       <div class="phase-subtitle">Build the data backbone</div>
       <ul class="phase-deliverables">
-        <li>Data Cloud: unified customer profile across all channels</li>
-        <li>Sales Cloud: CRM for Cirkel Group team</li>
-        <li>TICTUK + Invenpro + Ride Eats data connectors</li>
+        <li><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud: unified customer profile across all channels</li>
+        <li><img src="icons/sales.svg" class="pi-sm" alt="">Sales Cloud: CRM for Cirkel Group team</li>
+        <li><img src="icons/mulesoft.svg" class="pi-sm" alt="">TICTUK + Invenpro + Ride Eats data connectors</li>
         <li>First customer segmentation model live</li>
         <li>Basic reporting dashboard for Jordy</li>
       </ul>
@@ -1852,8 +1858,8 @@
       <div class="phase-title">Activate</div>
       <div class="phase-subtitle">Turn data into customer relationships</div>
       <ul class="phase-deliverables">
-        <li>Loyalty Management: points, tiers, automated rewards</li>
-        <li>Marketing Cloud Engagement: WhatsApp + email journeys</li>
+        <li><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management: points, tiers, automated rewards</li>
+        <li><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud Engagement: WhatsApp + email journeys</li>
         <li>First re-engagement campaign (lapsed customers)</li>
         <li>Birthday &amp; milestone offers automated</li>
         <li>Campaign attribution reporting live</li>
@@ -1865,9 +1871,9 @@
       <div class="phase-title">Intelligence</div>
       <div class="phase-subtitle">Deploy AI across the business</div>
       <ul class="phase-deliverables">
-        <li>Agentforce Store Performance Agent (daily briefings)</li>
-        <li>Customer Re-engagement Agent (automated win-back)</li>
-        <li>WhatsApp Service Agent (24/7 customer support)</li>
+        <li><img src="icons/agentforce.svg" class="pi-sm" alt="">Agentforce Store Performance Agent (daily briefings)</li>
+        <li><img src="icons/agentforce.svg" class="pi-sm" alt="">Customer Re-engagement Agent (automated win-back)</li>
+        <li><img src="icons/agentforce.svg" class="pi-sm" alt="">WhatsApp Service Agent (24/7 customer support)</li>
         <li>Predictive transaction forecasting per store</li>
         <li>Foundation for Western Union cross-sell intelligence</li>
       </ul>
