@@ -669,6 +669,22 @@
     margin-top: 16px;
   }
 
+  .proof-benchmarks {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 200, 0, 0.2);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-top: 24px;
+  }
+  .proof-bench-header { margin-bottom: 20px; }
+  .proof-bench-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+
   /* ── Scenarios ── */
   .scenario-card {
     background: var(--bg-card);
@@ -863,13 +879,7 @@
     line-height: 1.4;
   }
 
-  .phase-deliverables li::before {
-    content: '→';
-    color: var(--blue);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 0px;
-  }
+  .phase-deliverables li::before { content: ''; display: none; }
 
   /* ── ROI Section ── */
   .roi-grid {
@@ -1212,6 +1222,7 @@
   /* ── Product icons ── */
   .pi { width: 22px; height: 22px; vertical-align: middle; margin-right: 6px; flex-shrink: 0; }
   .pi-sm { width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; flex-shrink: 0; }
+  .pi-md { width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; flex-shrink: 0; }
   .arch-chip { display: inline-flex; align-items: center; }
   .tag { display: inline-flex; align-items: center; }
 
@@ -1540,32 +1551,32 @@
     </thead>
     <tbody>
       <tr>
-        <td>Customer Identity</td>
+        <td><img src="icons/data-cloud.svg" class="pi-sm" alt="">Customer Identity</td>
         <td>Anonymous transactions across 4 disconnected systems</td>
         <td>Unified customer profile in Data Cloud — one record across TICTUK, Invenpro, Ride Eats, and loyalty</td>
       </tr>
       <tr>
-        <td>Loyalty</td>
+        <td><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty</td>
         <td>No program. No recognition for repeat customers.</td>
         <td>Loyalty Management: points, tiers, automated rewards triggered by customer behavior</td>
       </tr>
       <tr>
-        <td>Marketing</td>
+        <td><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing</td>
         <td>Broadcast campaigns with no segmentation or attribution</td>
         <td>Marketing Cloud: segmented journeys, personalized WhatsApp messages, A/B testing, real-time campaign ROI</td>
       </tr>
       <tr>
-        <td>CRM</td>
+        <td><img src="icons/sales.svg" class="pi-sm" alt="">CRM</td>
         <td>No customer records. Business knowledge lives in Jordy's head.</td>
         <td>Sales Cloud: account management, pipeline tracking, team collaboration, contact history</td>
       </tr>
       <tr>
-        <td>Operations</td>
+        <td><img src="icons/agentforce.svg" class="pi-sm" alt="">Operations</td>
         <td>Reactive. Jordy learns about a problem after it happens.</td>
         <td>Agentforce: AI agents send daily store briefings, surface underperformance early, suggest corrective actions</td>
       </tr>
       <tr>
-        <td>Digital Growth</td>
+        <td><img src="icons/marketing.svg" class="pi-sm" alt="">Digital Growth</td>
         <td>Digital channel active but undermonetized — no follow-through</td>
         <td>Personalized post-order journeys via Marketing Cloud — upsell, cross-sell, re-engage lapsed customers</td>
       </tr>
@@ -1640,46 +1651,82 @@
       <div class="proof-logo">El Corral</div>
       <div class="proof-country">🇨🇴 Colombia · QSR Burger Franchise</div>
       <div class="proof-clouds">
+        <span class="tag tag-blue"><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management</span>
         <span class="tag tag-blue"><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud</span>
         <span class="tag tag-blue"><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud</span>
-        <span class="tag tag-blue"><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management</span>
-        <span class="tag tag-blue"><img src="icons/service.svg" class="pi-sm" alt="">Service Cloud</span>
       </div>
-      <p class="proof-insight">The El Corral architecture is the reference blueprint for Cirkel Group — same franchise model, same QSR challenges, different market.</p>
+      <div class="proof-result">
+        <div class="proof-stat">
+          <div class="proof-stat-num">+<span class="counter" data-target="69" data-suffix="%">69%</span></div>
+          <div class="proof-stat-label">Average ticket uplift via loyalty (Dufry benchmark)</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num" style="font-size:16px;line-height:1.2;">Caribbean<br>Live</div>
+          <div class="proof-stat-label">Grupo Ramos (La Sirena) on Salesforce Loyalty today</div>
+        </div>
+      </div>
+      <p class="proof-insight">Same architecture, already deployed in the Caribbean. El Corral's 3-tier loyalty model is the exact blueprint for Cirkel Group's KFC and Pizza Hut program.</p>
     </div>
     <div class="proof-card reveal reveal-delay-2">
       <div class="proof-logo">Juan Valdez</div>
       <div class="proof-country">🇨🇴 Colombia · QSR Coffee Franchise</div>
       <div class="proof-clouds">
+        <span class="tag tag-blue"><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management</span>
         <span class="tag tag-blue"><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud</span>
         <span class="tag tag-blue"><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud</span>
-        <span class="tag tag-blue"><img src="icons/agentforce.svg" class="pi-sm" alt="">Agentforce</span>
-      </div>
-      <p class="proof-insight">Agentforce and Data Cloud running at franchise scale — the same stack we're proposing for Cirkel Group.</p>
-    </div>
-    <div class="proof-card reveal reveal-delay-3">
-      <div class="proof-logo">QSR Industry Benchmarks</div>
-      <div class="proof-country">🌎 Global · Salesforce State of Connected Customer</div>
-      <div class="proof-clouds">
-        <span class="tag tag-gold">Industry Data</span>
       </div>
       <div class="proof-result">
         <div class="proof-stat">
-          <div class="proof-stat-num"><span class="counter" data-target="2" data-suffix="×">2×</span></div>
-          <div class="proof-stat-label">Repeat visit rate with personalized loyalty</div>
+          <div class="proof-stat-num"><span class="counter" data-target="42" data-suffix="%">42%</span></div>
+          <div class="proof-stat-label">Of total sales from loyalty members</div>
         </div>
         <div class="proof-stat">
-          <div class="proof-stat-num"><span class="counter" data-target="35" data-suffix="%">35%</span></div>
-          <div class="proof-stat-label">Average increase in digital order value</div>
+          <div class="proof-stat-num">4.9★</div>
+          <div class="proof-stat-label">App rating · 430K active downloads</div>
+        </div>
+      </div>
+      <p class="proof-insight">42% of all revenue flows through loyalty — on the same stack Cirkel Group would run across KFC and Pizza Hut Suriname.</p>
+    </div>
+    <div class="proof-card reveal reveal-delay-3">
+      <div class="proof-logo">Starbucks</div>
+      <div class="proof-country">🌍 Global · QSR Coffee Chain · 10,000+ stores</div>
+      <div class="proof-clouds">
+        <span class="tag tag-blue"><img src="icons/slack.svg" class="pi-sm" alt="">Slack</span>
+      </div>
+      <div class="proof-result">
+        <div class="proof-stat">
+          <div class="proof-stat-num" style="font-size:18px;">48h → 2min</div>
+          <div class="proof-stat-label">HQ-to-store response time</div>
         </div>
         <div class="proof-stat">
-          <div class="proof-stat-num"><span class="counter" data-target="60" data-suffix="%">60%</span></div>
-          <div class="proof-stat-label">Reduction in customer churn with targeted re-engagement</div>
+          <div class="proof-stat-num"><span class="counter" data-target="70" data-suffix="%">70%</span></div>
+          <div class="proof-stat-label">Faster internal communication</div>
         </div>
-        <div class="proof-stat">
-          <div class="proof-stat-num">6mo</div>
-          <div class="proof-stat-label">Typical time to first meaningful campaign results</div>
-        </div>
+      </div>
+      <p class="proof-insight">Starbucks runs real-time operational coordination across 10,000+ locations via Slack — the same challenge Jordy faces managing 11 stores across Suriname.</p>
+    </div>
+  </div>
+  <div class="proof-benchmarks reveal">
+    <div class="proof-bench-header">
+      <div class="proof-logo" style="font-size:16px;">QSR Industry Benchmarks</div>
+      <div class="proof-country">🌎 Global · Salesforce State of Connected Customer</div>
+    </div>
+    <div class="proof-bench-stats">
+      <div class="proof-stat">
+        <div class="proof-stat-num"><span class="counter" data-target="2" data-suffix="×">2×</span></div>
+        <div class="proof-stat-label">Repeat visit rate with personalized loyalty</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num"><span class="counter" data-target="35" data-suffix="%">35%</span></div>
+        <div class="proof-stat-label">Average increase in digital order value</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num"><span class="counter" data-target="60" data-suffix="%">60%</span></div>
+        <div class="proof-stat-label">Reduction in customer churn with targeted re-engagement</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">6mo</div>
+        <div class="proof-stat-label">Typical time to first meaningful campaign results</div>
       </div>
     </div>
   </div>
@@ -1845,11 +1892,11 @@
       <div class="phase-title">Foundation</div>
       <div class="phase-subtitle">Build the data backbone</div>
       <ul class="phase-deliverables">
-        <li><img src="icons/data-cloud.svg" class="pi-sm" alt="">Data Cloud: unified customer profile across all channels</li>
-        <li><img src="icons/sales.svg" class="pi-sm" alt="">Sales Cloud: CRM for Cirkel Group team</li>
-        <li><img src="icons/mulesoft.svg" class="pi-sm" alt="">TICTUK + Invenpro + Ride Eats data connectors</li>
-        <li>First customer segmentation model live</li>
-        <li>Basic reporting dashboard for Jordy</li>
+        <li><img src="icons/data-cloud.svg" class="pi-md" alt="">Data Cloud: unified customer profile across all channels</li>
+        <li><img src="icons/sales.svg" class="pi-md" alt="">Sales Cloud: CRM for Cirkel Group team</li>
+        <li><img src="icons/mulesoft.svg" class="pi-md" alt="">TICTUK + Invenpro + Ride Eats data connectors</li>
+        <li><img src="icons/data-cloud.svg" class="pi-md" alt="">First customer segmentation model live</li>
+        <li><img src="icons/data-cloud.svg" class="pi-md" alt="">Basic reporting dashboard for Jordy</li>
       </ul>
     </div>
     <div class="phase reveal reveal-delay-2" style="border-color: rgba(27,150,255,0.3);">
@@ -1858,11 +1905,11 @@
       <div class="phase-title">Activate</div>
       <div class="phase-subtitle">Turn data into customer relationships</div>
       <ul class="phase-deliverables">
-        <li><img src="icons/loyalty.svg" class="pi-sm" alt="">Loyalty Management: points, tiers, automated rewards</li>
-        <li><img src="icons/marketing.svg" class="pi-sm" alt="">Marketing Cloud Engagement: WhatsApp + email journeys</li>
-        <li>First re-engagement campaign (lapsed customers)</li>
-        <li>Birthday &amp; milestone offers automated</li>
-        <li>Campaign attribution reporting live</li>
+        <li><img src="icons/loyalty.svg" class="pi-md" alt="">Loyalty Management: points, tiers, automated rewards</li>
+        <li><img src="icons/marketing.svg" class="pi-md" alt="">Marketing Cloud Engagement: WhatsApp + email journeys</li>
+        <li><img src="icons/marketing.svg" class="pi-md" alt="">First re-engagement campaign (lapsed customers)</li>
+        <li><img src="icons/loyalty.svg" class="pi-md" alt="">Birthday &amp; milestone offers automated</li>
+        <li><img src="icons/marketing.svg" class="pi-md" alt="">Campaign attribution reporting live</li>
       </ul>
     </div>
     <div class="phase reveal reveal-delay-3" style="border-color: rgba(27,150,255,0.5);">
@@ -1871,11 +1918,11 @@
       <div class="phase-title">Intelligence</div>
       <div class="phase-subtitle">Deploy AI across the business</div>
       <ul class="phase-deliverables">
-        <li><img src="icons/agentforce.svg" class="pi-sm" alt="">Agentforce Store Performance Agent (daily briefings)</li>
-        <li><img src="icons/agentforce.svg" class="pi-sm" alt="">Customer Re-engagement Agent (automated win-back)</li>
-        <li><img src="icons/agentforce.svg" class="pi-sm" alt="">WhatsApp Service Agent (24/7 customer support)</li>
-        <li>Predictive transaction forecasting per store</li>
-        <li>Foundation for Western Union cross-sell intelligence</li>
+        <li><img src="icons/agentforce.svg" class="pi-md" alt="">Agentforce Store Performance Agent (daily briefings)</li>
+        <li><img src="icons/agentforce.svg" class="pi-md" alt="">Customer Re-engagement Agent (automated win-back)</li>
+        <li><img src="icons/agentforce.svg" class="pi-md" alt="">WhatsApp Service Agent (24/7 customer support)</li>
+        <li><img src="icons/agentforce.svg" class="pi-md" alt="">Predictive transaction forecasting per store</li>
+        <li><img src="icons/data-cloud.svg" class="pi-md" alt="">Foundation for Western Union cross-sell intelligence</li>
       </ul>
     </div>
   </div>
