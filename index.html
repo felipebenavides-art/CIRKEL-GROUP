@@ -1313,6 +1313,40 @@
   .team-card.team-animate { animation: teamPop 0.55s cubic-bezier(0.16,1,0.3,1) both; }
   @media (max-width: 600px) { #team { padding: 64px 24px; } .team-grid { gap: 28px; } .team-card { width: 120px; } .team-avatar, .team-avatar-placeholder { width: 88px; height: 88px; } }
 
+  /* ── Investment / Economic Proposal ── */
+  .inv-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .inv-head .section-title { margin-bottom: 0; }
+  .inv-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+  .inv-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .inv-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+  .inv-stat-value { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .inv-stat-sub { font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
+  .inv-quote { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 32px; overflow: hidden; }
+  .inv-quote-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding: 28px 32px 20px; border-bottom: 1px solid var(--border); background: var(--bg-card-2); }
+  .inv-quote-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .inv-quote-meta { font-size: 13px; color: var(--text-secondary); }
+  .inv-quote-total { text-align: right; }
+  .inv-quote-total-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .inv-quote-total-value { font-size: 26px; font-weight: 800; color: var(--blue-light); }
+  .inv-table-wrap { overflow-x: auto; }
+  .inv-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+  .inv-table th { padding: 12px 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .inv-table th:first-child, .inv-table td:first-child { text-align: left; }
+  .inv-table td { padding: 14px 20px; font-size: 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.05); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .inv-table td:first-child { white-space: normal; font-weight: 600; }
+  .inv-table tr:last-child td { border-bottom: none; }
+  .inv-table .muted { color: var(--text-secondary); }
+  .inv-table .strike { color: var(--text-muted); text-decoration: line-through; }
+  .inv-table tr.comp td { background: rgba(46,204,113,0.03); }
+  .inv-disc { color: var(--gold); font-weight: 700; }
+  .inv-terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+  .inv-term { border-left: 2px solid var(--blue); padding: 4px 0 4px 14px; }
+  .inv-term-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .inv-term-value { font-size: 15px; font-weight: 600; }
+  .inv-note { font-size: 12px; color: var(--text-muted); margin-top: 28px; line-height: 1.6; }
+  @media (max-width: 900px) { .inv-summary, .inv-terms { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .inv-summary, .inv-terms { grid-template-columns: 1fr; } .inv-quote-head { padding: 20px; } .inv-quote-total { text-align: left; } }
+
   @media print {
     #gate { display: none !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -1378,6 +1412,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#roi">ROI</a></li>
     <li><a href="#demo">Live Demo</a></li>
+    <li><a href="#investment">Investment</a></li>
     <li><a href="#next">Next Steps</a></li>
     <li><a href="#team">Your Team</a></li>
   </ul>
@@ -1982,6 +2017,196 @@
     </div>
   </div>
 </div>
+
+<!-- ─────────── SECTION 8B — INVESTMENT ─────────── -->
+<section id="investment">
+  <div class="section-label">Economic Proposal</div>
+  <div class="inv-head">
+    <h2 class="section-title">Your Investment</h2>
+    <span class="tag tag-gold">Draft · For Discussion</span>
+  </div>
+  <p class="section-desc" style="margin-bottom:40px;">Two coordinated 24-month subscriptions — Marketing &amp; Data 360 activation first, Loyalty one month later — with partnership-level discounts on every paid line and the platform foundations included at no cost.</p>
+
+  <div class="inv-summary">
+    <div class="inv-stat reveal reveal-delay-1">
+      <div class="inv-stat-label">Total Investment</div>
+      <div class="inv-stat-value" style="color:var(--blue-light);">USD 171,240</div>
+      <div class="inv-stat-sub">Combined, 24-month term</div>
+    </div>
+    <div class="inv-stat reveal reveal-delay-2">
+      <div class="inv-stat-label">List Value</div>
+      <div class="inv-stat-value" style="color:var(--text-secondary);">USD 1,248,000</div>
+      <div class="inv-stat-sub">Paid lines at list price</div>
+    </div>
+    <div class="inv-stat reveal reveal-delay-3">
+      <div class="inv-stat-label">Total Savings</div>
+      <div class="inv-stat-value" style="color:var(--green);">USD 1,076,760</div>
+      <div class="inv-stat-sub">86% blended discount</div>
+    </div>
+    <div class="inv-stat reveal reveal-delay-4">
+      <div class="inv-stat-label">Complimentary</div>
+      <div class="inv-stat-value" style="color:var(--gold);">4 products</div>
+      <div class="inv-stat-sub">Included at USD 0</div>
+    </div>
+  </div>
+
+    <div class="inv-quote reveal">
+      <div class="inv-quote-head">
+        <div>
+          <div class="inv-quote-title">Marketing Cloud &amp; Data 360</div>
+          <div class="inv-quote-meta">Contract 11/1/2026 – 10/31/2028 · 24 months</div>
+        </div>
+        <div class="inv-quote-total">
+          <div class="inv-quote-total-label">Total · 24 months</div>
+          <div class="inv-quote-total-value">USD 87,240.00</div>
+        </div>
+      </div>
+      <div class="inv-table-wrap">
+        <table class="inv-table">
+          <thead><tr><th>Product</th><th>List Price</th><th>Discount</th><th>Your Price</th><th>Qty</th><th>Term (mo)</th><th>Total</th></tr></thead>
+          <tbody>
+          <tr>
+            <td>Salesforce Message Credits – WhatsApp for Marketing (1,000)</td>
+            <td class="strike">USD 2.00</td>
+            <td class="inv-disc">55% off</td>
+            <td>USD 0.90</td>
+            <td>15,000</td>
+            <td>—</td>
+            <td><strong>USD 13,500.00</strong></td>
+          </tr>
+          <tr class="comp">
+            <td>Force.com – Enterprise Edition (Administrator) – Cross Product</td>
+            <td class="strike">USD 75.00</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">24</td>
+            <td class="muted">Included</td>
+          </tr>
+          <tr class="comp">
+            <td>Data 360 Provisioning</td>
+            <td class="muted">—</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">24</td>
+            <td class="muted">Included</td>
+          </tr>
+          <tr class="comp">
+            <td>Salesforce Foundations</td>
+            <td class="muted">—</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">24</td>
+            <td class="muted">Included</td>
+          </tr>
+          <tr class="comp">
+            <td>Salesforce Foundations – Entitlements – Flex Credits</td>
+            <td class="muted">—</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">—</td>
+            <td class="muted">Included</td>
+          </tr>
+          <tr>
+            <td>Customer Data Cloud for Marketing – Ad Audiences</td>
+            <td class="strike">USD 200.00</td>
+            <td class="inv-disc">90% off</td>
+            <td>USD 20.00</td>
+            <td>25</td>
+            <td>24</td>
+            <td><strong>USD 12,000.00</strong></td>
+          </tr>
+          <tr>
+            <td>Marketing Cloud – Business Unit – Enterprise Edition</td>
+            <td class="strike">USD 2,500.00</td>
+            <td class="inv-disc">80% off</td>
+            <td>USD 500.00</td>
+            <td>3</td>
+            <td>24</td>
+            <td><strong>USD 36,000.00</strong></td>
+          </tr>
+          <tr>
+            <td>Marketing Cloud – Advanced – Enterprise Edition</td>
+            <td class="strike">USD 3,250.00</td>
+            <td class="inv-disc">67% off</td>
+            <td>USD 1,072.50</td>
+            <td>1</td>
+            <td>24</td>
+            <td><strong>USD 25,740.00</strong></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="inv-quote reveal">
+      <div class="inv-quote-head">
+        <div>
+          <div class="inv-quote-title">Loyalty Management</div>
+          <div class="inv-quote-meta">Contract 12/1/2026 – 11/30/2028 · 24 months</div>
+        </div>
+        <div class="inv-quote-total">
+          <div class="inv-quote-total-label">Total · 24 months</div>
+          <div class="inv-quote-total-value">USD 84,000.00</div>
+        </div>
+      </div>
+      <div class="inv-table-wrap">
+        <table class="inv-table">
+          <thead><tr><th>Product</th><th>List Price</th><th>Discount</th><th>Your Price</th><th>Qty</th><th>Term (mo)</th><th>Total</th></tr></thead>
+          <tbody>
+          <tr>
+            <td>Loyalty Management Growth – Enterprise Edition</td>
+            <td class="strike">USD 35,000.00</td>
+            <td class="inv-disc">90% off</td>
+            <td>USD 3,500.00</td>
+            <td>1</td>
+            <td>24</td>
+            <td><strong>USD 84,000.00</strong></td>
+          </tr>
+          <tr class="comp">
+            <td>Salesforce Foundations</td>
+            <td class="muted">—</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">24</td>
+            <td class="muted">Included</td>
+          </tr>
+          <tr class="comp">
+            <td>Salesforce Foundations – Entitlements – Flex Credits</td>
+            <td class="muted">—</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">—</td>
+            <td class="muted">Included</td>
+          </tr>
+          <tr class="comp">
+            <td>Data 360 Provisioning</td>
+            <td class="muted">—</td>
+            <td><span class="tag tag-green">Complimentary</span></td>
+            <td class="muted">USD 0.00</td>
+            <td class="muted">1</td>
+            <td class="muted">24</td>
+            <td class="muted">Included</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <div class="inv-terms reveal">
+    <div class="inv-term"><div class="inv-term-label">Billing Frequency</div><div class="inv-term-value">Annual</div></div>
+    <div class="inv-term"><div class="inv-term-label">Payment Terms</div><div class="inv-term-value">Net 30</div></div>
+    <div class="inv-term"><div class="inv-term-label">Payment Method</div><div class="inv-term-value">Wire Transfer</div></div>
+    <div class="inv-term"><div class="inv-term-label">Billing Method</div><div class="inv-term-value">Email</div></div>
+  </div>
+
+  <p class="inv-note">Draft proposal for discussion purposes only — not a binding offer. All amounts in USD and exclusive of applicable taxes. List and selling prices are per unit per month, except Message Credits, which are priced per unit for the full term. Final pricing and terms are subject to the executed order form.</p>
+</section>
 
 <!-- ─────────── SECTION 9 — NEXT STEPS ─────────── -->
 <section id="next">
